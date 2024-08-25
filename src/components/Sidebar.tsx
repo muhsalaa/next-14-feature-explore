@@ -129,6 +129,52 @@ export function Sidebar() {
       >
         Nested Parallel 3
       </Link>
+      <Link
+        className={pathname === "/intercept-route" ? "text-red-600" : ""}
+        href="/intercept-route"
+      >
+        Intercepted Route
+      </Link>
+      <Link
+        className={
+          pathname === "/intercept-route/route-1"
+            ? "text-red-600 ml-4"
+            : " ml-4"
+        }
+        href="/intercept-route/route-1"
+      >
+        Route 1
+      </Link>
+      <Link
+        className={
+          pathname === "/intercept-route/route-2"
+            ? "text-red-600 ml-4"
+            : " ml-4"
+        }
+        href="/intercept-route/route-2"
+      >
+        Route 2
+      </Link>
+      <Link
+        className={
+          pathname === "/intercept-route/route-3"
+            ? "text-red-600 ml-4"
+            : " ml-4"
+        }
+        href="/intercept-route/route-3"
+      >
+        Route 3
+      </Link>
+      <Link
+        className={
+          pathname === "/intercept-route/route-3/route-4"
+            ? "text-red-600 ml-8"
+            : " ml-8"
+        }
+        href="/intercept-route/route-3/route-4"
+      >
+        Route 4
+      </Link>
     </div>
   );
 }
