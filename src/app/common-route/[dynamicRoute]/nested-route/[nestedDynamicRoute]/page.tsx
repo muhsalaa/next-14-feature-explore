@@ -15,9 +15,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 async function DataDisplay() {
   const randomNumber = Math.floor(Math.random() * 100) + 1;
-  if (randomNumber > 50) {
-    throw new Error("Some artificial error happened: " + randomNumber);
-  }
+  // if (randomNumber > 50) {
+  //   throw new Error("Some artificial error happened: " + randomNumber);
+  // }
 
   const data = await fetch(
     `https://jsonplaceholder.typicode.com/todos/${randomNumber}`
@@ -36,9 +36,15 @@ export default async function Page({
       Nested Dynamic route <br />
       dynamicRoute: {params.dynamicRoute} <br />
       nestedDynamicRoute: {params.nestedDynamicRoute}
-      {/* <Suspense fallback={<div>Loading...</div>}> */}
-      <DataDisplay />
-      {/* </Suspense> */}
+      <Suspense fallback={<div>Loading 1...</div>}>
+        <DataDisplay />
+      </Suspense>
+      <Suspense fallback={<div>Loading 2...</div>}>
+        <DataDisplay />
+      </Suspense>
+      <Suspense fallback={<div>Loading 3...</div>}>
+        <DataDisplay />
+      </Suspense>
     </div>
   );
 }
